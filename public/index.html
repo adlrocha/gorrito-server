@@ -15,7 +15,7 @@
 
 <script>
     window.onload = function () {
-        axios.get('http://localhost:8180/data')
+        axios.get('http://gorrito.azurewebsites.net/data')
             .then(function (response) {
                 console.log(response.data.alarm)
                 document.getElementById("alarm").textContent = response.data.alarma;
@@ -27,5 +27,4 @@
     };
 
 </script>
-
 </html>
