@@ -1,0 +1,31 @@
+<html>
+<header>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta http-equiv="refresh" content="1" />
+    <title>LastBasic</title>
+</header>
+
+<body>
+
+    <h1>LastBasic</h1>
+    <h3 id="alarm">No Alarm</h3>
+</body>
+
+<script>
+    window.onload = function () {
+        axios.get('http://localhost:8180/data')
+            .then(function (response) {
+                console.log(response.data.alarm)
+                document.getElementById("alarm").textContent = response.data.alarma;
+            })
+            .catch(function (error) {
+                document.getElementById("alarm").textContent = "No connection with device...";
+                console.log(error)
+            });
+    };
+
+</script>
+
+</html>
