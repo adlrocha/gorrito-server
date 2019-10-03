@@ -8,14 +8,28 @@
 </header>
 
 <body>
-
+<div>
+    <img src="./lastbasic.png" alt="Italian Trulli">
     <h1>LastBasic</h1>
     <h3 id="alarm"></h3>
+</div>
 </body>
+<style>
+div {
+    height: 200px;
+    width: 400px;
+    background: black;
 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+</style>
 <script>
     window.onload = function () {
-        axios.get('http://gorrito.azurewebsites.net/data')
+        axios.get('https://gorrito.azurewebsites.net/data')
             .then(function (response) {
                 console.log(response.data.alarm)
                 document.getElementById("alarm").textContent = response.data.alarma;
