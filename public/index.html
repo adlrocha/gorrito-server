@@ -3,7 +3,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <meta http-equiv="refresh" content="1" />
+    <!-- <meta http-equiv="refresh" content="1" /> -->
     <title>LastBasic</title>
 </header>
 
@@ -33,15 +33,15 @@ img {
     left:0;
     right: 50%;
     margin:0 auto;
-    width: 50%;
-    height: 100px;
+    width: 80%;
+    height: 150px;
     text-overflow:ellipsis;
     overflow:hidden;
 }
 </style>
 <script>
-    window.onload = function () {
-        axios.get('https://gorrito.azurewebsites.net/data')
+    var theReq = function () {
+        axios.get('https://gorrito.azurewebsites.net/data)
             .then(function (response) {
                 console.log(response.data.alarm)
                 document.getElementById("alarm").textContent = response.data.alarma;
@@ -51,6 +51,9 @@ img {
                 console.log(error)
             });
     };
+    window.onload = theReq()
+    var t=setInterval(theReq,1000);
+
 
 </script>
 </html>
